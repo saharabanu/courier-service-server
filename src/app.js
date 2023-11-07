@@ -1,14 +1,16 @@
 const express = require('express');
 const cors = require('cors');
+const routes = require('./app/routes');
+// const router = require('./app/routes');
+
 const app = express();
 
+// cors
 app.use(cors());
+app.use(express.json());
 
-//  const data = 'app';
-
-// const duummmy2345 =   'hello     is it problemmmm';
-
-// const gooddd = 'sdvjsso'
+// routes
+app.use('/api/v1', routes);
 
 // heath route
 app.get('/', (req, res) => {
